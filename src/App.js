@@ -39,6 +39,10 @@ function App() {
       DecData[index].quantity--
       setCardData(DecData)
     }
+    else if (DecData[index].quantity === 1) {
+      DecData.splice(index, 1)
+      setCardData(DecData)
+    }
   }
 
 
@@ -53,7 +57,7 @@ function App() {
     cardData.forEach((ele) => {
       price += ele.price * ele.quantity;
     });
-    setTotal(price.toFixed(0));
+    setTotal(price);
   }, [cardData]);
 
 
@@ -71,7 +75,7 @@ function App() {
             <li>Blog</li>
             <li>Contact</li>
           </ul>
-          <h1 className='text-3xl'>{total}$:PKR</h1>
+          <h1 className='text-3xl'>{total.toFixed()}$:PKR</h1>
           <button onClick={Toggleclk} className='px-6 py-2 text-white bg-blue-600 rounded-md'>Add</button>
         </nav>
         <div
