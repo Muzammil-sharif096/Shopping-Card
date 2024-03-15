@@ -42,7 +42,6 @@ function App() {
   }
 
 
-// "muzamil"
 
   useEffect(() => {
     Axios.get("https://fakestoreapi.com/products")
