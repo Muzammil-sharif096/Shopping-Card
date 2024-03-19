@@ -16,7 +16,6 @@ function App() {
   console.log(cardData, "test");
 
 
-
   const Toggleclk = () => {
     setShowSidebar(!showSidebar);
   };
@@ -67,8 +66,8 @@ function App() {
     <>
       <div className='main relative'>
         <nav className='flex justify-evenly p-4 items-center bg-blue-400'>
-          <h1 className='text-4xl italic'>Data</h1>
-          <ul className='flex gap-20'>
+          <h1 className='text-4xl italic font-bold'>Data</h1>
+          <ul className='flex gap-20 font-bold'>
             <li>Home</li>
             <li>About</li>
             <li>Services</li>
@@ -88,8 +87,8 @@ function App() {
           <div className='grid gap-4'>
             {
               cardData.map((ele, index) => (
-                <div key={index} className='bg-white p-2  '>
-                  <h1>{ele.quantity}</h1>
+                <div key={index} className='bg-white p-2 space-y-2  '>
+                  <h1>items :  {ele.quantity}</h1>
                   <button onClick={() => { handleDecrement(index) }} className='px-6 py-1 bg-blue-500 rounded-md'>-</button>
                   <h1>{ele.id}</h1>
                   <div className='flex justify-center'>
@@ -107,14 +106,14 @@ function App() {
         <div className='grid lg:grid-cols-3 md:grid-cols-2 italic p-4 sm:grid-cols-1  gap-6 mx-auto w-[80%]'>
           {
             data.map((ele, index) => (
-              <div key={ele.id} className=' text-center text-xl p-6 bg-black space-y-4  text-white'>
-                <h1>{ele.id}</h1>
+              <div key={ele.id} className=' text-center text-xl p-6 font-bold bg-white shadow-black rounded shadow-xl space-y-3'>
+                {/* <h1>{ele.id}</h1> */}
                 <div className='flex justify-center'>
                   <img className='h-60' src={ele.image} alt={ele.title} />
                 </div>
                 <h1>{ele.title}</h1>
                 <h1>{ele.price}</h1>
-                <button onClick={() => { handleclk(index) }} className='px-6 italic bg-white text-black font-bold rounded-sm'>Add</button>
+                <button onClick={() => { handleclk(index) }} className='px-8 py-2  italic bg-blue-500 text-white font-bold rounded-lg'>Add</button>
               </div>
             ))
           }
